@@ -1,72 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coming Soon</title>
+  <title>FlexYourCatch – Coming Soon</title>
+  <meta name="description" content="FlexYourCatch is launching soon. Join the list and be first to know when we go live!" />
+  <meta property="og:title" content="FlexYourCatch – Coming Soon" />
+  <meta property="og:description" content="We're launching soon. Stay tuned!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://buster-dog.github.io/COMING-SOON/" />
+  <meta property="og:image" content="https://buster-dog.github.io/COMING-SOON/flexyourcatch-logo.png" />
+  <link rel="icon" href="flexyourcatch-logo.png" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #282c34;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      padding: 20px;
+    :root {
+      --bg: #0f172a; /* slate-900 */
+      --bg-card: #1e293b; /* slate-800 */
+      --bg-card-strong: #334155; /* slate-700 */
+      --text-main: #ffffff;
+      --text-sub: #cbd5e1; /* slate-300 */
+      --accent: #10b981; /* emerald-500 */
+      --accent-dark: #059669; /* emerald-600 */
+      --radius: 12px;
+      --space: clamp(1rem, 2vw, 2rem);
+      --max-width: 600px;
+      --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5em;
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;height:100%;}
+    body{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      background:var(--bg);
+      color:var(--text-main);
+      font-family:var(--font-body);
+      text-align:center;
+      padding:var(--space);
     }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5em;
-      color: #bbb;
+    main{
+      width:100%;
+      max-width:var(--max-width);
+      margin-inline:auto;
     }
-    .countdown {
-      font-size: 2rem;
-      letter-spacing: 2px;
-      display: flex;
-      gap: 15px;
-      justify-content: center;
+    img.logo{
+      width:120px;
+      max-width:40vw;
+      height:auto;
+      margin-bottom:1.5rem;
     }
-    .countdown div {
-      background: #444;
-      padding: 15px 20px;
-      border-radius: 8px;
-      min-width: 60px;
+    h1{
+      font-family:var(--font-heading);
+      font-size:clamp(2.5rem,6vw,3.5rem);
+      margin:0 0 0.5em;
+      line-height:1.1;
     }
-    .label {
-      font-size: 0.8rem;
-      margin-top: 5px;
-      color: #aaa;
+    p.tagline{
+      font-size:clamp(1.125rem,2.5vw,1.375rem);
+      margin:0 0 1.5em;
+      color:var(--text-sub);
     }
+    .countdown-wrapper{margin-bottom:2rem;}
+    .countdown{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(64px,1fr));
+      gap:1rem;
+      justify-items:center;
+      align-items:center;
+    }
+    .time-box{
+      background:var(--bg-card);
+      padding:1rem;
+      border-radius:var(--radius);
+      min-width:70px;
+    }
+    .time-box strong{
+      display:block;
+      font-size:clamp(1.75rem,5vw,2.5rem);
+      line-height:1;
+      font-variant-numeric:tabular-nums;
+    }
+    .time-box span.label{
+      display:block;
+      margin-top:0.25rem;
+      font-size:0.75rem;
+      text-transform:uppercase;
+      letter-spacing:0.05em;
+      color:var(--text-sub);
+    }
+    form.notify{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.5rem;
+      justify-content:center;
+      margin-bottom:1.5rem;
+    }
+    form.notify input[type="email"]{
+      padding:0.75rem 1rem;
+      font-size:1rem;
+      border-radius:var(--radius);
+      border:2px solid var(--bg-card-strong);
+      background:var(--bg-card);
+      color:var(--text-main);
+      min-width:220px;
+    }
+    form.notify input[type="email"]::placeholder{color:var(--text-sub);}    
+    form.notify button{
+      padding:0.75rem 1.25rem;
+      font-size:1rem;
+      border:none;
+      border-radius:var(--radius);
+      background:var(--accent);
+      color:var(--bg);
+      cursor:pointer;
+      transition:background 0.15s ease,transform 0.15s ease;
+    }
+    form.notify button:active{transform:scale(0.97);}    
+    form.notify button:hover{background:var(--accent-dark);}  
+    .small-print{
+      font-size:0.75rem;
+      color:var(--text-sub);
+      max-width:45ch;
+      margin-inline:auto;
+    }
+    footer{
+      margin-top:3rem;
+      font-size:0.75rem;
+      color:var(--text-sub);
+    }
+    .live-msg{margin-top:1.5rem;font-size:1.25rem;color:var(--accent);}
+    .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
   </style>
 </head>
 <body>
-  <h1>Coming Soon</h1>
-  <p>Our website is under construction. Stay tuned!</p>
-  <div class="countdown" id="countdown">
-    <div><span id="days">00</span><div class="label">Days</div></div>
-    <div><span id="hours">00</span><div class="label">Hours</div></div>
-    <div><span id="minutes">00</span><div class="label">Minutes</div></div>
-    <div><span id="seconds">00</span><div class="label">Seconds</div></div>
-  </div>
+  <main>
+    <!-- Replace logo path with your actual file. Transparent PNG recommended. -->
+    <img src="flexyourcatch-logo.png" alt="FlexYourCatch logo" class="logo" />
+
+    <h1>Coming Soon</h1>
+    <p class="tagline">Our website is under construction. Stay tuned!</p>
+
+    <!-- Countdown -->
+    <div class="countdown-wrapper" aria-live="polite" aria-atomic="true">
+      <div class="countdown" id="countdown" role="timer">
+        <div class="time-box"><strong id="days">00</strong><span class="label">Days</span></div>
+        <div class="time-box"><strong id="hours">00</strong><span class="label">Hours</span></div>
+        <div class="time-box"><strong id="minutes">00</strong><span class="label">Minutes</span></div>
+        <div class="time-box"><strong id="seconds">00</strong><span class="label">Seconds</span></div>
+      </div>
+      <div id="live-msg" class="live-msg" hidden>We're live now!</div>
+    </div>
+
+    <!-- Email notify form (static / placeholder) -->
+    <!-- ACTION OPTIONS:
+         1. Use a service like Formspree: action="https://formspree.io/f/yourid" method="POST"
+         2. Use Netlify Forms: add data-netlify="true" name="notify"
+         3. Use Firebase: attach JS listener & write to Firestore/realtime DB -->
+    <form class="notify" id="notify-form" action="#" method="POST" novalidate>
+      <label for="email" class="visually-hidden">Email address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Notify Me</button>
+    </form>
+    <p class="small-print">We respect your inbox. We'll only email when we're ready to launch.</p>
+
+    <footer>
+      &copy; <span id="year"></span> FlexYourCatch. All rights reserved.
+    </footer>
+  </main>
 
   <script>
-    // Set the date we're counting down to
-    const launchDate = new Date("2025-07-31T00:00:00").getTime();
+    /* ---------------------------
+     * CONFIG
+     * --------------------------- */
+    // Countdown target: END of 31 July 2025 in Australia/Sydney (AEST is UTC+10, no DST in July).
+    // Using explicit offset to avoid browser local-time confusion.
+    const launchDate = new Date("2025-07-31T23:59:59+10:00").getTime();
 
-    function updateCountdown() {
-      const now = new Date().getTime();
+    /* ---------------------------
+     * COUNTDOWN LOGIC
+     * --------------------------- */
+    const countdownEl = document.getElementById('countdown');
+    const liveMsgEl = document.getElementById('live-msg');
+
+    function updateCountdown(){
+      const now = Date.now();
       const distance = launchDate - now;
 
-      if (distance < 0) {
-        document.getElementById('countdown').innerHTML = "<p>We're live now!</p>";
+      if (distance <= 0){
+        // hide boxes, show live message
+        countdownEl.style.display = 'none';
+        liveMsgEl.hidden = false;
         clearInterval(interval);
         return;
       }
@@ -76,14 +200,43 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      document.getElementById("days").textContent = String(days).padStart(2, "0");
-      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+      document.getElementById('days').textContent = String(days).padStart(2,'0');
+      document.getElementById('hours').textContent = String(hours).padStart(2,'0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2,'0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2,'0');
     }
 
-    updateCountdown(); // initial call
+    updateCountdown(); // initial paint
     const interval = setInterval(updateCountdown, 1000);
+
+    /* ---------------------------
+     * EMAIL PLACEHOLDER HANDLER
+     * --------------------------- */
+    document.getElementById('notify-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const emailInput = document.getElementById('email');
+      const email = emailInput.value.trim();
+
+      if(!email){
+        alert('Please enter an email address.');
+        return;
+      }
+      // basic email pattern check
+      const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if(!ok){
+        alert('Please enter a valid email.');
+        return;
+      }
+
+      // TODO: Replace with real submission logic (Firebase, Formspree, etc.)
+      alert('Thanks! We\'ll let you know when we launch.');
+      emailInput.value = '';
+    });
+
+    /* ---------------------------
+     * FOOTER YEAR
+     * --------------------------- */
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
