@@ -50,18 +50,12 @@
   </div>
 
   <script>
-    // Calculate target date: end of next week (Sunday 23:59:59)
-    const now = new Date();
-    const dayOfWeek = now.getDay(); // 0 = Sunday
-    const daysUntilEndNextWeek = (7 - dayOfWeek) + 7; // days to next Sunday
-    const targetDate = new Date();
-    targetDate.setDate(now.getDate() + daysUntilEndNextWeek);
-    targetDate.setHours(23, 59, 59, 999);
+    // Target date: 15 August 2025, 23:59:59
+    const targetDate = new Date("2025-08-15T23:59:59+10:00"); // Adjust timezone if needed
 
-    // Countdown update
     function updateCountdown() {
-      const currentTime = new Date().getTime();
-      const distance = targetDate.getTime() - currentTime;
+      const now = new Date().getTime();
+      const distance = targetDate.getTime() - now;
 
       if (distance <= 0) {
         document.querySelector("h1").innerText = "We're Live!";
@@ -82,7 +76,7 @@
     }
 
     const interval = setInterval(updateCountdown, 1000);
-    updateCountdown(); // Initial call
+    updateCountdown();
   </script>
 </body>
 </html>
